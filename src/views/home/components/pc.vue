@@ -4,7 +4,7 @@
     <div class="topcontent">
       <div class="top-box">
         <div class="top-left">
-          <div class="top-log"><img src="../assets/home/logo.png" /></div>
+          <div class="top-log"><img src="../../assets/home/logo.png" /></div>
           <div class="top-adressbox">上海站</div>
         </div>
         <div class="top-nav">
@@ -50,7 +50,7 @@
     <!--平台介绍部分-->
     <div class="introcontent">
       <div class="intro_first">
-        <img src="../assets/home/img-1.png" />
+        <img src="../../assets/home/img-1.png" />
         <div class="intro_txt">
           <h3>CNFS平台介绍与定位</h3>
           <span
@@ -65,7 +65,7 @@
             >2019年年初，纪元链科技联合大连理工大学及清华大学王小云院士，中科院上海光存储研究所等国内顶尖专家，发起CNFS协议的研发及基于CNFS而构建的分布式存储平台的搭建，拟于2021年面世。</span
           >
         </div>
-        <img src="../assets/home/img-2.png" />
+        <img src="../../assets/home/img-2.png" />
       </div>
     </div>
     <!--公司发展历程-->
@@ -96,17 +96,17 @@
       <h3>重要新闻</h3>
       <div class="newscon">
         <div class="newscon-list">
-          <img src="../assets/home/news-1.png" />
+          <img src="../../assets/home/news-1.png" />
           <h4>
             区块链，云栖大会邀请全球科技爱好者和商业创新者，共同打开未来科技之门
           </h4>
         </div>
         <div class="newscon-list">
-          <img src="../assets/home/news-2.png" />
+          <img src="../../assets/home/news-2.png" />
           <h4>今年重磅发布，云计算，人工智能，量子计算，芯片…</h4>
         </div>
         <div class="newscon-list">
-          <img src="../assets/home/news-3.png" />
+          <img src="../../assets/home/news-3.png" />
           <h4>
             今年重磅发布，云计算，人工智能，量子计算，芯片… 突破对未来科技的橡！
           </h4>
@@ -135,10 +135,10 @@
       <h3>合作战略伙伴</h3>
       <div class="partner-group">
         <div class="partner-item">
-          <img src="../assets/home/WechatIMG.png" alt="">
+          <img src="../../assets/home/WechatIMG.png" alt="">
         </div>
         <div class="partner-item">
-          <img src="../assets/home/madesen.png" alt="">
+          <img src="../../assets/home/madesen.png" alt="">
         </div>
         <div class="partner-item"></div>
         <div class="partner-item"></div>
@@ -157,8 +157,8 @@
 <script>
 // require styles
 
-import jFooter from "../components/footer";
-import jButton from "../components/button";
+import jFooter from "../../components/footer";
+import jButton from "../../components/button";
 export default {
   components: { jFooter, jButton },
   data() {
@@ -187,7 +187,7 @@ export default {
   font-size: 30px;
   padding-left: 20px;
   margin-bottom: 20px;
-  background-image: url("../assets/home/line.png");
+  background-image: url("../../assets/home/line.png");
   background-size: 10px 20px;
   background-position: 0 center;
   background-repeat: no-repeat;
@@ -199,7 +199,7 @@ export default {
   .topcontent {
     width: 100%;
     height: 600px;
-    background-image: url("../assets/home/img_shouping.png");
+    background-image: url("../../assets/home/img_shouping.png");
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
@@ -302,7 +302,7 @@ export default {
   .ad-box {
     height: 70px;
     width: 100%;
-    background-image: url("../assets/home/bar-1.png");
+    background-image: url("../../assets/home/bar-1.png");
     background-size: 100%;
     background-position: center;
     display: flex;
@@ -386,7 +386,7 @@ export default {
   .process-box {
     width: 100%;
     height: 510px;
-    background-image: url("../assets/home/img_fazhan.png");
+    background-image: url("../../assets/home/img_fazhan.png");
     background-position: center;
     h3 {
       @include h3;
@@ -418,7 +418,7 @@ export default {
           width: 158px;
           height: 84px;
           margin: 0 auto;
-          background-image: url("../assets/home/bg-1.png");
+          background-image: url("../../assets/home/bg-1.png");
           background-size: 158px 84px;
           color: #0d8bff;
           font-size: 20px;
@@ -426,7 +426,7 @@ export default {
           text-align: center;
           line-height: 84px;
           &.active {
-            background-image: url("../assets/home/bgOn-1.png");
+            background-image: url("../../assets/home/bgOn-1.png");
             color: #fff;
           }
         }
@@ -481,7 +481,7 @@ export default {
 
   .search-box {
     width: 100%;
-    background-image: url("../assets/home/img_search.png");
+    background-image: url("../../assets/home/img_search.png");
     background-position: center;
     padding-top: 115px;
     padding-bottom: 100px;
@@ -527,7 +527,7 @@ export default {
         margin-right: 20px;
         font-size: 14px;
         &.hot {
-          background-image: url("../assets/home/huorebaokuan.png");
+          background-image: url("../../assets/home/huorebaokuan.png");
           background-size: 28px 30px;
           background-repeat: no-repeat;
           padding-left: 40px;

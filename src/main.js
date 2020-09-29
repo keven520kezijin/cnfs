@@ -14,6 +14,13 @@ import 'aos/dist/aos.css'
 
 Vue.config.productionTip = false
 
+import {Swiper as SwiperClass, Pagination, Mousewheel, Autoplay} from 'swiper'
+import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
+// Swiper modules
+SwiperClass.use([Pagination, Mousewheel, Autoplay])
+// Global use
+Vue.use(getAwesomeSwiper(SwiperClass))
+
 Vue.use(VueAwesomeSwiper)
 Vue.use(ElementUI)
 

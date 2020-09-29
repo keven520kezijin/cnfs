@@ -1,7 +1,7 @@
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 'use strict'
 const path = require('path')
-const name = '纪元链科技cmm' // page title
+const name = 'CNFS' // page title
 const port = process.env.port || process.env.npm_config_port || 9528 // dev port
 
 function resolve(dir) {
