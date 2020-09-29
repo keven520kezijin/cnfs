@@ -1,8 +1,13 @@
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 'use strict'
+const webpack = require('webpack')
 const path = require('path')
 const name = 'CNFS' // page title
 const port = process.env.port || process.env.npm_config_port || 9528 // dev port
+
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const productionGzipExtensions = ['js', 'css']
+const isProduction = process.env.NODE_ENV === 'production'
 
 function resolve(dir) {
     return path.join(__dirname, dir)
@@ -37,6 +42,22 @@ module.exports = {
             alias: {
                 '@': resolve('src')
             }
-        }
+        },
+        plugins: [
+          // Ignore all locale files of moment.js
+          new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+          
+          // 配置compression-webpack-plugin压缩
+          new CompressionWebpackPlugin({
+            algorithm: 'gzip',
+            test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+            threshold: 10240,
+            minRatio: 0.8
+          }),
+          new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 5, 
+            minChunkSize: 100
+          })
+        ]
     }
 }

@@ -58,7 +58,7 @@
         <img src="../assets/home/qq.png" alt="" />
       </div>
       <img class="code-img" src="../assets/home/2dcode.png" alt="" />
-      <div class="txt">长按识别或截图保存<br/>关注公众号，移动存储</div>
+      <div class="txt">长按识别或截图保存<br />关注公众号，移动存储</div>
     </div>
     <div class="btn">咨询电话：40088996332 转 1</div>
     <div class="btn-2">城市合伙人</div>
@@ -95,6 +95,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+::v-deep .el-menu {
+  border: none;
+}
 .footer {
   background-color: #2e3033;
   width: 100%;
@@ -147,7 +150,7 @@ export default {
     font-size: 14px;
     background-color: #0d8bff;
   }
-  
+
   .btn-2 {
     width: 90%;
     height: 40px;

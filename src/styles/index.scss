@@ -1,6 +1,8 @@
 @import "./iconfont.css";
 @import './variables.scss';
-
+*{
+  box-sizing: border-box;
+}
 html,
 body,
 div,

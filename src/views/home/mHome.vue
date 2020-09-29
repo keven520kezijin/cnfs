@@ -1,6 +1,7 @@
 <template>
   <div class="mhome">
-    <div class="top">
+    <m-top />
+    <!-- <div class="top">
       <div class="top-l">
         <img src="../../assets/home/logo.png" />
         <div class="city">上海</div>
@@ -13,8 +14,8 @@
           <i class="iconfont iconfenzu451"></i>
         </div>
       </div>
-    </div>
-    <div class="banner">
+    </div> -->
+    <m-banner :bgImg="bgImg">
       <div class="btn-box">
         <div class="btn">
           <i class="iconfont iconfenzu151"></i>
@@ -22,7 +23,7 @@
         </div>
         <div class="btn">白皮书</div>
       </div>
-    </div>
+    </m-banner>
     <div class="ad">
       <div class="btn">立即下单</div>
     </div>
@@ -130,14 +131,17 @@
 
 <script>
 import mFooter from "@/components/mfooter";
+import mBanner from "@/components/mBanner";
+import mTop from "@/components/mTop";
 import searchBox from "./components/searchBox";
 import BScroll from "better-scroll";
 export default {
   name: "m-home",
-  components: { mFooter, searchBox },
+  components: { mFooter, searchBox, mBanner, mTop },
   props: {},
   data() {
     return {
+      bgImg: require("@/assets/home/3.png"),
       scroll: null,
       courseSwiperOptions: {
         pagination: {
@@ -154,7 +158,7 @@ export default {
     this.$nextTick(() => {
       //$refs绑定元素
       if (!this.scroll) {
-        alert(0);
+        // alert(0);
         this.scroll = new BScroll(this.$refs.wrapper, {
           //开启点击事件 默认为false
           click: true,
@@ -173,25 +177,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "~@/styles/mixin.scss";
+@import "~@/styles/mobile.scss";
 ::v-deep .swiper-pagination-bullet {
   width: 60px;
   height: 2px;
   border-radius: 1px;
-}
-
-h2.txt {
-  color: #333;
-  height: 30px;
-  line-height: 30px;
-  font-size: 22px;
-  padding-left: 30px;
-  background-image: url("../../assets/home/line.png");
-  background-size: 14px 24px;
-  background-position: left;
-  background-repeat: no-repeat;
-  display: inherit;
-  margin: 20px 0;
 }
 .mhome {
   width: 100%;
@@ -243,26 +233,16 @@ h2.txt {
       }
     }
   }
-  .banner {
-    height: 284px;
+  .btn-box {
     width: 100%;
-    background-image: url("../../assets/home/3.png");
-    background-color: #900;
-    background-size: 423px 284px;
-    background-position: center;
+    height: 40px;
     display: flex;
-    align-items: flex-end;
-    .btn-box {
-      width: 100%;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      padding: 0 0 30px 30px;
-      .btn {
-        @include btn(14px, #fff, none);
-        & + .btn {
-          margin-left: 10px;
-        }
+    justify-content: center;
+    padding: 0 0 30px 30px;
+    .btn {
+      @include btn(14px, #fff, none);
+      & + .btn {
+        margin-left: 10px;
       }
     }
   }
@@ -309,7 +289,7 @@ h2.txt {
     padding: 20px;
     box-sizing: border-box;
     align-items: center;
-    background-image: url("../../assets/home/m_fazhan.png");
+    background-image: url("~@/assets/home/m_fazhan.png");
     h2.txt {
       margin-top: 60px;
       margin-bottom: 40px;
@@ -329,7 +309,7 @@ h2.txt {
             width: 100%;
             height: 58px;
             margin: 0 auto;
-            background-image: url("../../assets/home/bg-1.png");
+            background-image: url("~@/assets/home/bg-1.png");
             background-size: 100px 58px;
             background-repeat: no-repeat;
             background-position: center;
@@ -339,7 +319,7 @@ h2.txt {
             text-align: center;
             line-height: 58px;
             &.active {
-              background-image: url("../../assets/home/bgOn-1.png");
+              background-image: url("~@/assets/home/bgOn-1.png");
               color: #fff;
             }
           }
@@ -387,8 +367,7 @@ h2.txt {
     flex-direction: column;
     align-items: center;
     h2 {
-      padding-top: 20px;
-      padding-bottom: 20px;
+      margin: 40px 0;
     }
     .partner-box {
       width: 100%;

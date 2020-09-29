@@ -26,7 +26,7 @@ Vue.use(ElementUI)
 
 AOS.init();
 Vue.use(VueProgressBar, {
-  color: 'rgb(143, 255, 199)',
+  color: 'rgb(40, 120, 255)',
   failedColor: 'red',
   height: '2px'
 })
