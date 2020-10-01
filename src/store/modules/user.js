@@ -6,7 +6,8 @@ const getDefaultState = () => {
   return {
     token: getToken(),
     name: '',
-    avatar: ''
+    avatar: '',
+    device: 'kkkk'
   }
 }
 
@@ -24,6 +25,9 @@ const mutations = {
   },
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
+  },
+  SET_DEVICE: (state, device) => {
+    state.device = device
   }
 }
 
@@ -38,7 +42,11 @@ const actions = {
       commit('RESET_STATE')
       resolve()
     })
-  }
+  },
+  
+  setDevice({ commit }, device) {
+    commit('SET_DEVICE', device)
+  },
 }
 
 export default {

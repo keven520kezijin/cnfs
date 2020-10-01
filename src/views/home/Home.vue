@@ -147,12 +147,18 @@
 import jFooter from "../../components/footer";
 import jButton from "../../components/button";
 import searchBox from "./components/searchBox";
+import { mapState } from 'vuex'
 export default {
   components: { jFooter, jButton, searchBox },
   data() {
     return {
       activeIndex: "1",
     };
+  },
+  computed: {
+    ...mapState({
+      device: state => state.user.device,
+    }),
   },
   methods: {
     handleNavSelect(e) {

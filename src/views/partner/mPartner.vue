@@ -5,26 +5,30 @@
     <div class="imgbox">
       <img class="ad-img" src="@/assets/home/ad.png" alt="" />
     </div>
-    <box class="box-1" title="合作理念" :boxImg="require('@/assets/home/box1.png')">
+    <box
+      class="box-1"
+      title="合作理念"
+      :boxImg="require('@/assets/home/box1.png')"
+    >
       <pre class="box-txt">
-        平台层面，主要做四件事
-        公共关系、技术开发、平台规则、服务运营。
-        市场层面，采取开放合作共赢的模式
-        也就是城市合伙人机制。
+平台层面，主要做四件事
+公共关系、技术开发、平台规则、服务运营。
+市场层面，采取开放合作共赢的模式
+也就是城市合伙人机制。
       </pre>
     </box>
     <box title="城市合伙人权益" :boxImg="require('@/assets/home/box2.png')">
       <pre class="box-txt">
-        分享平台十六大利益；
-        年收益可望上亿；
-        业绩优秀的城市合伙人将与项目方携手上市；
+分享平台十六大利益；
+年收益可望上亿；
+业绩优秀的城市合伙人将与项目方携手上市；
       </pre>
     </box>
     <box title="合作条件" :boxImg="require('@/assets/home/box3.png')">
       <pre class="box-txt">
-        当地合法注册，符合经营范围的企业；
-        价值认同、诚信靠谱、能力上佳 执行力强；
-        每地级市仅限一家；
+当地合法注册，符合经营范围的企业；
+价值认同、诚信靠谱、能力上佳 执行力强；
+每地级市仅限一家；
       </pre>
     </box>
     <partnerCom />
@@ -52,7 +56,7 @@ export default {
     mFooter,
     box,
     sustain,
-    partnerCom
+    partnerCom,
   },
   props: {},
   data() {
@@ -96,7 +100,7 @@ export default {
   position: absolute;
   top: 333px;
   img {
-    display:block
+    display: block;
   }
   .ad-img {
     width: 100%;
