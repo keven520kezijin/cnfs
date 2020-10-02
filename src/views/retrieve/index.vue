@@ -1,18 +1,25 @@
 <template>
-  <div class="register">
-    <div class="top">你好，<br />欢迎登录CNFS存储平台</div>
+  <div class="retrieve">
+    <div class="top">忘记登陆密码？ <br />输入手机号进行密码找回</div>
     <div class="level">
       <input type="text" placeholder="请输入手机号码" />
+      <!-- <van-field v-model="text" /> -->
     </div>
     <div class="level">
-      <input type="text" placeholder="请设置登陆密码" />
+      <input class="inp-code" type="text" placeholder="请输入验证码" />
+    </div>
+    <div class="code-box">
+      <van-button class="code-btn" type="info">发送验证码</van-button>
+    </div>
+    <div class="level">
+      <input type="text" placeholder="请输入新的登陆密码" />
+    </div>
+    <div class="level">
+      <input type="text" placeholder="再次输入新的登陆密码" />
     </div>
 
-    <el-button class="login-btn" type="primary">登录</el-button>
-    <div class="forget-box">
-      <span class="forget">忘记密码</span>
-      <span class="login">注册账号</span>
-    </div>
+    <el-button class="login-btn" type="primary">确认修改并登录</el-button>
+
     <p class="bottom">
       登陆即代表已阅读并同意
       <span class="ligth">《软件服务协议》</span>
@@ -22,12 +29,21 @@
 
 <script>
 // https://www.17sucai.com/pins/demo-show?id=33789
+import Vue from "vue";
+import { Field, Button } from "vant";
+
+Vue.use(Field);
+Vue.use(Button);
 export default {};
 </script>
 
 <style scoped lang="scss">
 @import "~@/styles/mobile.scss";
-.register {
+::v-deep .van-button {
+  height: 36px;
+}
+
+.retrieve {
   @include page;
   height: 100%;
   position: relative;
@@ -46,6 +62,8 @@ export default {};
     width: 90%;
     position: relative;
     margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
     input {
       height: 30px;
       line-height: 30px;
@@ -68,6 +86,9 @@ export default {};
         color: #cccccc;
       }
     }
+    input.inp-code {
+      width: 100px;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -76,7 +97,7 @@ export default {};
       right: 0;
       height: 1px;
       background-color: #e2e2e2;
-      border-bottom: 1px solid #e2e2e2;
+      background-color: #e2e2e2;
     }
     &:after {
       content: "";
@@ -84,13 +105,21 @@ export default {};
       height: 1px;
       left: 51%;
       right: 51%;
-      background-color: #409EFF;
+      background-color: #409eff;
       bottom: 0;
       transition-duration: 0.3s;
     }
     &:hover:after {
       left: 0;
       right: 0;
+    }
+  }
+  .code-box {
+    right: 20px;
+    top: 193px;
+    position: absolute;
+    .code-btn {
+      border-radius: 18px;
     }
   }
   .login-btn {
@@ -114,7 +143,7 @@ export default {};
       color: #353535;
     }
     .login {
-      color: #0D8BFF;
+      color: #0d8bff;
     }
   }
 
@@ -127,7 +156,7 @@ export default {};
     font-size: 12px;
     text-align: center;
     .ligth {
-      color: #5E9CD5;
+      color: #5e9cd5;
     }
   }
 }

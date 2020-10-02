@@ -16,11 +16,21 @@ const routes = [
       meta: { title: '首页' }
     }]
   },
-  // {
-  //   path: '/home',
-  //   name: 'Home',
-  //   component: () => import('@/views/home/Home')
-  // },
+  {
+    path: '/retrieve',
+    name: 'Retrieve',
+    component: () => import('@/views/retrieve/')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/register/')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login/')
+  },
   {
     path: '/mobileHome',
     name: 'm-Home',

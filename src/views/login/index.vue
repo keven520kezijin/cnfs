@@ -1,18 +1,17 @@
 <template>
-  <div class="register">
-    <div class="top">你好，<br />欢迎登录CNFS存储平台</div>
+  <div class="logon">
+    <div class="top">你好，<br />欢迎注册CNFS存储平台</div>
     <div class="level">
       <input type="text" placeholder="请输入手机号码" />
+    </div>
+    <div class="level">
+      <input type="text" placeholder="请输入验证码" />
     </div>
     <div class="level">
       <input type="text" placeholder="请设置登陆密码" />
     </div>
 
-    <el-button class="login-btn" type="primary">登录</el-button>
-    <div class="forget-box">
-      <span class="forget">忘记密码</span>
-      <span class="login">注册账号</span>
-    </div>
+    <el-button class="login-btn" type="primary">注册</el-button>
     <p class="bottom">
       登陆即代表已阅读并同意
       <span class="ligth">《软件服务协议》</span>
@@ -21,13 +20,12 @@
 </template>
 
 <script>
-// https://www.17sucai.com/pins/demo-show?id=33789
 export default {};
 </script>
 
 <style scoped lang="scss">
 @import "~@/styles/mobile.scss";
-.register {
+.logon {
   @include page;
   height: 100%;
   position: relative;
@@ -54,9 +52,9 @@ export default {};
       width: 100%;
       box-sizing: content-box;
       padding-bottom: 10px;
+
       &:focus {
         outline: none;
-        background: none;
       }
       &::input-placeholder {
         color: #cccccc;
@@ -88,7 +86,7 @@ export default {};
       bottom: 0;
       transition-duration: 0.3s;
     }
-    &:hover:after {
+    &:hover:after, &:focus+after {
       left: 0;
       right: 0;
     }
@@ -100,24 +98,6 @@ export default {};
     border: none;
     border-radius: 0;
   }
-  .forget-box {
-    height: 30px;
-    line-height: 30px;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    span:hover {
-      text-decoration: underline;
-    }
-    .forget {
-      color: #353535;
-    }
-    .login {
-      color: #0D8BFF;
-    }
-  }
-
   .bottom {
     position: absolute;
     bottom: 0;
