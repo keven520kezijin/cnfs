@@ -32,6 +32,11 @@ const routes = [
     component: () => import('@/views/login/')
   },
   {
+    path: '/regionalAgent',
+    name: 'RegionalAgent',
+    component: () => import('@/views/regionalAgent/')
+  },
+  {
     path: '/mobileHome',
     name: 'm-Home',
     component: () => import('@/views/home/mHome')

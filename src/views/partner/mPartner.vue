@@ -98,7 +98,7 @@ export default {
   width: 100%;
   z-index: 1;
   position: absolute;
-  top: 333px;
+  top: 283px;
   img {
     display: block;
   }

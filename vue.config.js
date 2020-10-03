@@ -7,7 +7,7 @@ const port = process.env.port || process.env.npm_config_port || 9528 // dev port
 
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const productionGzipExtensions = ['js', 'css']
-const isProduction = process.env.NODE_ENV === 'production'
+// const isProduction = process.env.NODE_ENV === 'production'
 
 function resolve(dir) {
     return path.join(__dirname, dir)
