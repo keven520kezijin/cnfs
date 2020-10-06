@@ -12,29 +12,56 @@ const routes = [
     children: [{
       path: 'home',
       name: 'Home',
-      component: () => import('@/views/home/home'),
+      component: () => import('@/views/home'),
       meta: { title: '首页' }
+    }, {
+      path: '/store',
+      name: 'Store',
+      component: () => import('@/views/store'),
+      meta: { title: '存储' }
+    }, {
+      path: '/partner',
+      name: 'Partner',
+      component: () => import('@/views/partner'),
+      meta: { title: '合作伙伴' }
+    }, {
+      path: '/regionalAgent',
+      name: 'RegionalAgent',
+      meta: { title: '区域代理' },
+      component: () => import('@/views/regionalAgent')
+    }, {
+      path: '/register',
+      name: 'Register',
+      component: () => import('@/views/register')
+    }, {
+      path: '/retrieve',
+      name: 'Retrieve',
+      component: () => import('@/views/retrieve')
+    }, {
+      path: '/login',
+      name: 'Login',
+      component: () => import('@/views/login')
     }]
   },
   {
-    path: '/retrieve',
+    path: '/retrieve', // 找回密码
     name: 'Retrieve',
     component: () => import('@/views/retrieve/')
   },
   {
     path: '/register',
     name: 'Register',
-    component: () => import('@/views/register/')
+    component: () => import('@/views/register/mRegister')
   },
   {
-    path: '/login',
+    path: '/mlogin',
     name: 'Login',
-    component: () => import('@/views/login/')
+    component: () => import('@/views/login/mLogin')
   },
   {
     path: '/regionalAgent',
     name: 'RegionalAgent',
-    component: () => import('@/views/regionalAgent/')
+    component: () => import('@/views/regionalAgent/mRegionalAgent')
   },
   {
     path: '/mobileHome',
@@ -46,16 +73,20 @@ const routes = [
     name: 'm-Partner',
     component: () => import('@/views/partner/mPartner')
   },
-  {
-    
-    path: '/store',
-    name: 'store',
+  {    
+    path: '/m-store',
+    name: 'm-store',
     component: () => import('@/views/store/')
+  },
+  {    
+    path: '/p-store',
+    name: 'p-store',
+    component: () => import('@/views/store/store')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'hash',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

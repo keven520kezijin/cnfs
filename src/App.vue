@@ -8,22 +8,22 @@
 export default {
   name: 'app',
   created() {
-    this.$Progress.start()
-    this.$router.beforeEach((to, from, next) => {
-      if (to.meta.progress !== undefined) {
-        let meta = to.meta.progress
-        this.$Progress.parseMeta(meta)
-      }
-      console.log(from, next)
-      this.$Progress.start()
-    })
-    this.$router.afterEach((to, from) => {
-      this.$Progress.finish()
-      console.log("from: ", from)
-    })
+    // this.$Progress.start()
+    // this.$router.beforeEach((to, from, next) => {
+    //   if (to.meta.progress !== undefined) {
+    //     let meta = to.meta.progress
+    //     this.$Progress.parseMeta(meta)
+    //   }
+    //   console.log(from, next)
+    //   this.$Progress.start()
+    // })
+    // this.$router.afterEach((to, from) => {
+    //   this.$Progress.finish()
+    //   // console.log("from: ", from)
+    // })
   },
   mounted() {
-    this.$Progress.finish()
+    // this.$Progress.finish()
   }
 }
 </script>

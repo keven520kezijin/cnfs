@@ -7,7 +7,7 @@ const getDefaultState = () => {
     token: getToken(),
     name: '',
     avatar: '',
-    device: 'kkkk'
+    device: 'desktop'
   }
 }
 

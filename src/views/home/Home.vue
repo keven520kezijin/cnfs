@@ -2,32 +2,8 @@
   <div class="home">
     <!--头部-->
     <div class="topcontent">
-      <div class="top-box">
-        <div class="top-left">
-          <div class="top-log"><img src="../../assets/home/logo.png" /></div>
-          <div class="top-adressbox">上海站</div>
-        </div>
-        <div class="top-nav">
-          <el-menu
-            :default-active="activeIndex"
-            class="el-menu-demo"
-            mode="horizontal"
-            active-text-color="#1890FF"
-            @select="handleNavSelect"
-          >
-            <el-menu-item index="1">首页</el-menu-item>
-            <el-menu-item index="2">存储</el-menu-item>
-            <el-menu-item index="3">计算</el-menu-item>
-            <el-menu-item index="4">生态</el-menu-item>
-            <el-menu-item index="5">区块浏览器</el-menu-item>
-            <el-menu-item index="6">城市合伙人</el-menu-item>
-            <el-menu-item index="7">登录</el-menu-item>
-          </el-menu>
-          <div class="top-reg">免费注册</div>
-        </div>
-      </div>
       <div class="top-main">
-        <h2>CNFS分布式存储与计算平台</h2>
+        <h2>CNFS分布式存储与计算平台 {{device}}</h2>
         <h4>安全、隐私、快捷、价廉</h4>
         <div class="btn">
           <j-button @click.native="notify">
@@ -137,23 +113,18 @@
     </div>
 
     <!-- <el-button>默认按钮</el-button> -->
-    <j-footer></j-footer>
   </div>
 </template>
 
 <script>
 // require styles
-
-import jFooter from "../../components/footer";
 import jButton from "../../components/button";
 import searchBox from "./components/searchBox";
 import { mapState } from 'vuex'
 export default {
-  components: { jFooter, jButton, searchBox },
+  components: { jButton, searchBox },
   data() {
-    return {
-      activeIndex: "1",
-    };
+    return {};
   },
   computed: {
     ...mapState({
@@ -198,66 +169,6 @@ export default {
     background-size: 100%;
     display: flex;
     justify-content: center;
-    .top-box {
-      width: $pageWidth;
-      height: 60px;
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-      .top-left {
-        width: 300px;
-        .top-log {
-          height: 38px;
-          width: 180px;
-          float: left;
-        }
-        .top-adressbox {
-          width: 78px;
-          height: 28px;
-          border: 1px solid #ffffff;
-          color: #ffffff;
-          font-size: 14px;
-          line-height: 28px;
-          text-align: center;
-          float: left;
-          margin-left: 20px;
-        }
-      }
-      .top-nav {
-        width: 680px;
-        font-size: 18px;
-        display: flex;
-        justify-content: space-between;
-        .el-menu.el-menu--horizontal {
-          border: none;
-          background: none;
-          width: 600px;
-          .el-menu-item.is-active {
-            border: none;
-          }
-          .el-menu-item {
-            color: #fff;
-            height: 30px;
-            line-height: 30px;
-            border: none;
-          }
-        }
-        .el-menu-item:not(.is-disabled):hover,
-        .el-menu-item:not(.is-disabled):focus {
-          background: none;
-        }
-        .top-reg {
-          background: #0d8bff;
-          float: left;
-          font-size: 14px;
-          color: #fff;
-          width: 80px;
-          height: 30px;
-          line-height: 30px;
-          text-align: center;
-        }
-      }
-    }
     .top-main {
       position: absolute;
       top: 200px;

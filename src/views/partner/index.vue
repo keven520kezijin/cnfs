@@ -6,21 +6,20 @@
 
 <script>
 import viewsMixin from "@/views/mixin/";
-import pRegister from "./register"
-import mRegister from "./mRegister"
+import pPartner from "./partner"
+import mPartner from "./mPartner"
 export default {
   mixins: [viewsMixin],
-  components: {pRegister, mRegister},
+  components: {pPartner, mPartner},
   computed: {
     pageCom() {
       if(this.device === 'desktop') {
-        return 'pRegister'
+        return 'pPartner'
       } else {
-        return 'mRegister'
+        return 'mPartner'
       }
     }
   }
-
 }
 </script>
 

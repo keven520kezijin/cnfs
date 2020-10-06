@@ -1,52 +1,23 @@
 <template>
-  <div class="store">
-    <m-top />
-    <m-banner :bgImg="bgImg" class="banner"></m-banner>
-    <store />
-    <superiority />
-    <product />
-    <scene />
-    <m-footer class="footer-box" />
+  <div class="store-page">
+    <p-store v-if="device === 'desktop'" />
+    <m-store v-if="device === 'mobile'" />
   </div>
 </template>
 
 <script>
-import mBanner from "@/components/mBanner";
-import mFooter from "@/components/mfooter";
-import mTop from "@/components/mTop";
-import superiority from "./components/mobile/superiority" // product
-import product from "./components/mobile/product" // scene
-import scene from "./components/mobile/scene" // store
-import store from "./components/mobile/store" // store
+import viewsMixin from "@/views/mixin/";
+import pStore from "./store"
+import mStore from "./mStore"
 export default {
-  name: "",
+  mixins: [viewsMixin],
   components: {
-    mBanner,
-    mTop,
-    mFooter,
-    superiority,
-    product,
-    scene,
-    store
-  },
-  props: {},
-  data() {
-    return {      
-      bgImg: require("@/assets/home/m-banner2.png"),
-      box1Src: require("@/assets/home/box1.png"),
-    };
-  },
-  computed: {},
-  watch: {},
-  created() {},
-  mounted() {},
-  methods: {},
-};
+    pStore,
+    mStore
+  }
+}
 </script>
 
-<style scoped lang="scss">
-@import "~@/styles/mobile.scss";
-.store {
-  @include page;
-}
+<style>
+
 </style>

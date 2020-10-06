@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <m-top />
     <m-banner :bgImg="bgImg" class="banner"></m-banner>
     <div class="imgbox">
       <img class="ad-img" src="@/assets/home/ad.png" alt="" />
@@ -34,7 +33,6 @@
     <partnerCom />
 
     <sustain :arrImg="arrImg" />
-    <m-footer class="footer-box" />
   </div>
 </template>
 
@@ -42,8 +40,6 @@
 import Vue from "vue";
 import { Button } from "vant";
 import mBanner from "@/components/mBanner";
-import mFooter from "@/components/mfooter";
-import mTop from "@/components/mTop";
 import box from "./components/box";
 import sustain from "./components/sustain"; // partnerCom
 import partnerCom from "./components/partnerCom"; // partnerCom
@@ -52,8 +48,6 @@ export default {
   name: "",
   components: {
     mBanner,
-    mTop,
-    mFooter,
     box,
     sustain,
     partnerCom,
@@ -98,7 +92,7 @@ export default {
   width: 100%;
   z-index: 1;
   position: absolute;
-  top: 283px;
+  top: 282px;
   img {
     display: block;
   }
