@@ -441,7 +441,8 @@ export default {
         margin-bottom: 40px;
         margin: 15px;
         padding: 35px 30px;
-
+        display: flex;
+        align-items: flex-start;
         .profunc-pic {
           float: left;
           width: 70px;
@@ -450,7 +451,7 @@ export default {
         .profunc-txt {
           float: left;
           padding-left: 25px;
-          width: 400px;
+          width: 360px;
           h4 {
             color: #333;
             font-size: 28px;
