@@ -1,5 +1,5 @@
 <template>
-  <div class="login-page">
+  <div class="page-login">
     <component :is="pageCom"></component>
   </div>
 </template>
@@ -23,6 +23,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+.page-login {
+  height: 100%;
+}
 </style>

@@ -89,13 +89,13 @@
         <div class="setcon-list">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
       
         </div>
         <div class="setcon-list nobg">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
           <div class="hot-icon">
             <img src="@/assets/partner/icon_hot.png" />
           </div>
@@ -103,36 +103,36 @@
         <div class="setcon-list">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
           
         </div>
         <div class="setcon-list">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
          
         </div>
         <div class="setcon-list nobg">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
           <div class="hot-icon">  <img src="@/assets/partner/icon_new.png" /></div>
         </div>
         <div class="setcon-list">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
          
         </div>
         <div class="setcon-list">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
         </div>
         <div class="setcon-list nobg">
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
-          <button>立即查看</button>
+          <button @click="go('/regionalAgent')">立即查看</button>
           <div class="hot-icon"><img src="@/assets/partner/icon_hot.png" /></div>
         </div>
       </div>
@@ -203,6 +203,9 @@ export default {
     },
     notify() {
       console.log("notify");
+    },
+    go(path) {
+      this.$router.push(path)
     }
   }
 };

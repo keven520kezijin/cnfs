@@ -4,6 +4,12 @@ import Layout from '@/layout'
 
 Vue.use(VueRouter)
 
+// /compute">计算
+// /ecology">生态
+// /browser">区块浏览器
+// /partner">城市合伙人
+// /login">登录
+
 const routes = [
   {
     path: '/',
@@ -73,12 +79,12 @@ const routes = [
     name: 'm-Partner',
     component: () => import('@/views/partner/mPartner')
   },
-  {    
+  {
     path: '/m-store',
     name: 'm-store',
     component: () => import('@/views/store/')
   },
-  {    
+  {
     path: '/p-store',
     name: 'p-store',
     component: () => import('@/views/store/store')
@@ -90,5 +96,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+
 
 export default router

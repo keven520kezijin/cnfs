@@ -8,32 +8,32 @@
             <div class="partner-item">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item active">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item active">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item active">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
           </div>
         </swiper-slide>
@@ -42,32 +42,32 @@
             <div class="partner-item">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item active">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
             <div class="partner-item active">
               <div class="partner-tit">北京</div>
               <p>100人正在申请<br/>...</p>
-              <div class="btn">立即查看</div>
+              <div class="btn" @click="go('/regionalAgent')">立即查看</div>
             </div>
           </div>
         </swiper-slide>
@@ -96,7 +96,11 @@ export default {
   watch: {},
   created() {},
   mounted() {},
-  methods: {},
+  methods: {
+    go(path) {
+      this.$router.push(path)
+    }
+  },
 };
 </script>
 

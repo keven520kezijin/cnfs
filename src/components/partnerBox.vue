@@ -11,9 +11,13 @@
         <span>{{ item.isQy === 0 ? "未签约" : "已签约" }}</span>
       </div>
       <p v-if="item.isQy === 0">
-        <i></i><span>{{ item.num }}人关注</span>
+        <i>
+          <img src="@/assets/partner/huo.png" alt="" /> </i
+        ><span>{{ item.num }}人关注</span>
       </p>
-      <p v-else>√</p>
+      <p v-else>
+        <img class="yes" src="@/assets/partner/yes@2x.png" alt="" />
+      </p>
       <div class="btn" :class="item.isQy === 0 ? '' : 'hasQy'">签约</div>
     </div>
   </div>
@@ -83,13 +87,20 @@ export default {
         width: 16px;
         height: 16px;
         line-height: 18px;
-        background-color: #ccc;
         margin-right: 4px;
         display: inline-block;
+        img {
+          width: 12px;
+          height: 14px;
+        }
       }
       span {
         font-size: 12px;
         color: #9c9c9c;
+      }
+      .yes {
+        width: 27px;
+        height: 19px;
       }
     }
     .btn {

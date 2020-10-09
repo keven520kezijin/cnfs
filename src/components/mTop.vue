@@ -16,8 +16,8 @@
     </div>
     <van-popup v-model="showTop" position="top" :style="{ height: '80px' }">
       <div class="top-btn-box">
-        <div class="btn-l">免费注册</div>
-        <div class="btn-r">登录</div>
+        <div class="btn-l" @click="go('/register')">免费注册</div>
+        <div class="btn-r" @click="go('/login')">登录</div>
       </div>
     </van-popup>
     <van-popup
@@ -32,48 +32,28 @@
         class="el-menu-vertical-demo"
         background-color="#2e3033"
         text-color="#fff"
+        router
         active-text-color="#ffd04b"
+        @select="handleMenuSelect"
       >
-        <el-submenu index="1">
-          <template slot="title">
-            <span>存储服务</span>
-          </template>
-          <el-menu-item-group>
-            <el-menu-item index="1-1">多种存储</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="1-2">CNFS产品优势</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="1-3">产品功能</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="1-4">行业实战场景</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
-        <el-menu-item index="2">
+        <el-menu-item index="/home">
+          <span slot="title">首页</span>
+        </el-menu-item>
+        <el-menu-item index="/store">
+          <span slot="title">存储</span>
+        </el-menu-item>
+        <el-menu-item index="/compute">
           <span slot="title">计算</span>
         </el-menu-item>
-        <el-submenu index="3">
-          <template slot="title">
-            <span>城市合伙人</span>
-          </template>
-          <el-menu-item-group>
-            <el-menu-item index="3-1">合作理念</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="3-2">合伙人权益</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="3-3">合作条件</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="3-4">合伙人设置</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <el-menu-item index="3-5">平台支持</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
+        <el-menu-item index="/ecology">
+          <span slot="title">生态</span>
+        </el-menu-item>
+        <el-menu-item index="/browser">
+          <span slot="title">区块浏览器</span>
+        </el-menu-item>
+        <el-menu-item index="/partner">
+          <span slot="title">城市合伙人</span>
+        </el-menu-item>
       </el-menu>
     </van-popup>
   </div>
@@ -99,11 +79,20 @@ export default {
   mounted() {},
   methods: {
     showPopup() {
+      this.showTop = false;
       this.show = true;
     },
+    handleMenuSelect() {      
+      this.show = false;
+    },
     showTopPopup() {
+      this.show = false;
       this.showTop = true;
     },
+    go(path) {
+      this.showTop = false;
+      this.$router.push(path)
+    }
   },
 };
 </script>
@@ -114,6 +103,9 @@ export default {
 }
 .rigth-popup {
   background-color: #2e3033;
+  .el-menu-vertical-demo {
+    margin-top: 50px;
+  }
 }
 .el-menu {
   border-right: none;

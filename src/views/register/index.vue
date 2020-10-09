@@ -1,5 +1,5 @@
 <template>
-  <div class="partner-page">
+  <div class="page-register">
     <component :is="pageCom"></component>
   </div>
 </template>
@@ -24,6 +24,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+.page-register {
+  height: 100%;
+  position: relative;
+}
 </style>

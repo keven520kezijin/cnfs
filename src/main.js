@@ -7,9 +7,10 @@ import store from './store'
 import '@/styles/index.scss' // global css
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
-import VueProgressBar from 'vue-progressbar'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 
 Vue.config.productionTip = false
@@ -24,19 +25,20 @@ Vue.use(getAwesomeSwiper(SwiperClass))
 Vue.use(VueAwesomeSwiper)
 Vue.use(ElementUI)
 
-AOS.init();
-Vue.use(VueProgressBar, {
-  color: 'rgb(40, 120, 255)',
-  failedColor: 'red',
-  height: '2px'
-})
+AOS.init()
 
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
+  NProgress.start()
   if (to.meta.title) {
     document.title = to.meta.title
   }
   next()
+})
+
+router.afterEach(() => {
+  //进度条消失
+  NProgress.done()
 })
 
 new Vue({

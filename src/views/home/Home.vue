@@ -2,12 +2,12 @@
   <div class="home">
     <!--头部-->
     <div class="topcontent">
-      <div class="top-main">
-        <h2>CNFS分布式存储与计算平台 {{device}}</h2>
-        <h4>安全、隐私、快捷、价廉</h4>
-        <div class="btn">
+      <div class="top-main" ref="topMain">
+        <h2 class="leftIn">CNFS分布式存储与计算平台</h2>
+        <h4 class="leftIn delay200">安全、隐私、快捷、价廉</h4>
+        <div class="btn leftIn delay400">
           <j-button @click.native="notify">
-            <!-- <i class="iconfont iconplay_icon button-icon"></i> -->
+            <i class="iconfont iconfenzu151 button-icon"></i>
             平台介绍
           </j-button>
           <j-button @click.native="notify">
@@ -26,8 +26,12 @@
     <!--平台介绍部分-->
     <div class="introcontent">
       <div class="intro_first">
-        <img src="../../assets/home/img-1.png" />
-        <div class="intro_txt">
+        <img
+          src="../../assets/home/img-1.png"
+          data-aos="fade-right"
+          data-aos-once="true"
+        />
+        <div class="intro_txt" data-aos="fade-left" data-aos-once="true">
           <h3>CNFS平台介绍与定位</h3>
           <span
             >2019年年初，纪元链科技联合大连理工大学及清华大学王小云院士，中科院上海光存储研究所等国内顶尖专家，发起CNFS协议的研发及基于CNFS而构建的分布式存储平台的搭建，拟于2021年面世。</span
@@ -35,13 +39,17 @@
         </div>
       </div>
       <div class="intro_second">
-        <div class="intro_txt">
+        <div class="intro_txt" data-aos="fade-right" data-aos-once="true">
           <h3>CNFS平台优势</h3>
           <span
             >2019年年初，纪元链科技联合大连理工大学及清华大学王小云院士，中科院上海光存储研究所等国内顶尖专家，发起CNFS协议的研发及基于CNFS而构建的分布式存储平台的搭建，拟于2021年面世。</span
           >
         </div>
-        <img src="../../assets/home/img-2.png" />
+        <img
+          data-aos="fade-left"
+          data-aos-once="true"
+          src="../../assets/home/img-2.png"
+        />
       </div>
     </div>
     <!--公司发展历程-->
@@ -71,17 +79,17 @@
     <div class="news-box">
       <h3>重要新闻</h3>
       <div class="newscon">
-        <div class="newscon-list">
+        <div class="newscon-list" data-aos="fade-down" data-aos-once="true">
           <img src="../../assets/home/news-1.png" />
           <h4>
             区块链，云栖大会邀请全球科技爱好者和商业创新者，共同打开未来科技之门
           </h4>
         </div>
-        <div class="newscon-list">
+        <div class="newscon-list" data-aos="fade-down" data-aos-once="true">
           <img src="../../assets/home/news-2.png" />
           <h4>今年重磅发布，云计算，人工智能，量子计算，芯片…</h4>
         </div>
-        <div class="newscon-list">
+        <div class="newscon-list" data-aos="fade-down" data-aos-once="true">
           <img src="../../assets/home/news-3.png" />
           <h4>
             今年重磅发布，云计算，人工智能，量子计算，芯片… 突破对未来科技的橡！
@@ -120,16 +128,26 @@
 // require styles
 import jButton from "../../components/button";
 import searchBox from "./components/searchBox";
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   components: { jButton, searchBox },
   data() {
     return {};
   },
+  created() {},
   computed: {
     ...mapState({
-      device: state => state.user.device,
+      device: (state) => state.user.device,
     }),
+  },
+  mounted() {
+    setTimeout(() => {
+      console.log("topBox: ", this.$refs.topBox);
+      const topMain = this.$refs.topMain;
+      topMain.classList.add("show");
+    }, 200);
+
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleNavSelect(e) {
@@ -139,12 +157,47 @@ export default {
     notify() {
       console.log("notify");
     },
+    handleScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      console.log(scrollTop);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "~@/styles/variables.scss";
+
+.show .leftIn {
+  animation-name: leftIn;
+  animation-duration: 1s;
+}
+
+@keyframes leftIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.delay200 {
+  animation-delay: 200ms;
+  animation-fill-mode: backwards !important;
+}
+
+.delay400 {
+  animation-delay: 400ms;
+  animation-fill-mode: backwards !important;
+}
+
 @mixin h3 {
   height: 50px;
   line-height: 50px;
@@ -178,6 +231,10 @@ export default {
       flex-direction: column;
       align-items: center;
       color: #fff;
+      visibility: hidden;
+      &.show {
+        visibility: visible;
+      }
       h2 {
         font-size: 40px;
         margin-bottom: 50px;
@@ -192,6 +249,10 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .iconfenzu151 {
+          padding-right: 10px;
+          display: block;
+        }
       }
     }
   }

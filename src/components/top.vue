@@ -9,18 +9,24 @@
         :default-active="activeIndex"
         class="el-menu-demo"
         mode="horizontal"
+        router
         active-text-color="#1890FF"
-        @select="handleNavSelect"
       >
-        <el-menu-item index="0">首页</el-menu-item>
-        <el-menu-item index="1">存储</el-menu-item>
-        <el-menu-item index="2">计算</el-menu-item>
-        <el-menu-item index="3">生态</el-menu-item>
-        <el-menu-item index="4">区块浏览器</el-menu-item>
-        <el-menu-item index="5">城市合伙人</el-menu-item>
-        <el-menu-item index="6">登录</el-menu-item>
+        <el-menu-item index="/home">首页</el-menu-item>
+        <el-menu-item index="/store">存储</el-menu-item>
+        <el-menu-item @click="comingSoon">计算</el-menu-item>
+        <el-menu-item @click="comingSoon">生态</el-menu-item>
+        <el-menu-item @click="comingSoon">区块浏览器</el-menu-item>
+        <el-menu-item index="/partner">城市合伙人</el-menu-item>
+        <el-menu-item index="/login">登录</el-menu-item>
       </el-menu>
-      <div class="top-reg">免费注册</div>
+      <div
+        class="top-reg"
+        v-if="$route.path !== '/register'"
+        @click="go('/register')"
+      >
+        免费注册
+      </div>
     </div>
   </div>
 </template>
@@ -38,19 +44,31 @@ export default {
       Store: "1",
       Partner: "5",
     };
-    console.log("$route.name: ", routeIndex[this.$route.name])
+    console.log("$route.name: ", routeIndex[this.$route.name]);
 
     if (routeIndex[this.$route.name]) {
       this.activeIndex = routeIndex[this.$route.name];
     } else {
-      this.activeIndex = ''
+      this.activeIndex = "";
     }
   },
   methods: {
-    handleNavSelect(e) {
-      console.log("e: ", e);
-      const routerArr = ["home", "store", 2, 3, 4, "partner"];
-      this.$router.push(`/${routerArr[e]}`);
+    // handleNavSelect(e) {
+    //   console.log("e: ", e);
+    //   const routerArr = ["home", "store", 2, 3, 4, "partner"];
+    //   this.$router.push(`/${routerArr[e]}`);
+    // },
+    comingSoon() {
+      this.$message({
+        message: "敬请期待",
+        type: "warning"
+      });
+    },
+    go(path) {
+      if (path === "/register") {
+        this.activeIndex = "";
+      }
+      this.$router.push(path);
     },
   },
 };

@@ -1,17 +1,13 @@
 <template>
   <div class="regionalAgent">
-    <m-top />
     <div class="tit-box">上海市 > 区市级代理</div>
     <div class="main">
       <partner-box :partnerData="partnerData" />
     </div>
-    <m-footer class="footer-box" />
   </div>
 </template>
 
 <script>
-import mTop from "@/components/mTop";
-import mFooter from "@/components/mfooter";
 import partnerBox from "@/components/partnerBox";
 export default {
   data() {
@@ -81,8 +77,6 @@ export default {
     };
   },
   components: {
-    mTop,
-    mFooter,
     partnerBox,
   },
 };
@@ -93,6 +87,7 @@ export default {
 .regionalAgent {
   @include page;
   .tit-box {
+    margin-top: 50px;
     display: block;
     width: 100%;
     padding: 40px 0 20px 20px;
