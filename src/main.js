@@ -11,6 +11,8 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import VueParticles from 'vue-particles'  
+Vue.use(VueParticles)  
 
 
 Vue.config.productionTip = false

@@ -335,8 +335,13 @@ export default {
         font-size: 18px;
         color: #767676;
         transition: all .3s;
-        &:hover {
+        &:not(:first-child):hover {
           box-shadow: 0 0 9px 3px #999;
+          z-index: 88;
+          .store-tit {
+            background-color: #333;
+            color: #fff;
+          }
         }
         ul {
           text-align: left;
@@ -369,7 +374,6 @@ export default {
               font-weight: bold;
               color: #333333;
               background: #ebecec;
-              border-right: 1px solid #f5f5f6;
             }
 
             span {

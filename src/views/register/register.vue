@@ -6,7 +6,7 @@
     <!--内页内容-->
     <div class="nywrap">
       <h3>注册CNFS存储与计算平台账号</h3>
-      <div class="nycontent" style="padding-bottom: 40px">
+      <div class="nycontent" style="padding-bottom: 20px">
         <div class="find-box">
           <el-form ref="rulesForm" :rules="rules" :model="rulesForm">
             <el-form-item prop="mobile">
@@ -29,7 +29,7 @@
               ></el-input>
             </el-form-item>
             <el-button type="primary" round class="register-btn"
-              >注册并登陆</el-button
+              >注册并登录</el-button
             >
           </el-form>
         </div>
@@ -190,7 +190,7 @@ export default {
     h3 {
       width: 100%;
       background: #f5f5f6;
-      padding-top: 115px;
+      padding-top: 55px;
       padding-bottom: 40px;
       font-size: 42px;
       color: #333333;

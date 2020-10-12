@@ -18,7 +18,7 @@
           <ul>
             <li><input type="text" placeholder="请输入手机号码" /></li>
             <li><input type="text" placeholder="请输入登陆密码" /></li>
-            <li><button>登陆</button></li>
+            <li><button>登录</button></li>
           </ul>
           <div class="login-other">
             <p>其它登录方式</p>
@@ -132,7 +132,7 @@ export default {
         }
       }
       .login-con {
-        height: 712px;
+        height: 730px;
         width: 550px;
         float: right;
         background: url("~@/assets/login/line.png") top left no-repeat;
@@ -186,6 +186,7 @@ export default {
           ol {
             float: left;
             padding-left: 35px;
+            padding-top: 20px;
             li {
               float: left;
               font-size: 18px;

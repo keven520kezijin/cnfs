@@ -12,7 +12,13 @@
         </div>-->
       </div>
     </div>
-    <div class="note-box">ddd</div>
+    <div class="note-box">
+      <div class="marquee-box">
+        <marquee class="note-txt" width="400" align="middle"
+          >恭喜XX成为XX城市合伙人，携手CNFS平台开启合作共赢新篇章！   恭喜XX成为XX城市合伙人，携手CNFS平台开启合作共赢新篇章！     恭喜XX成为XX城市合伙人，携手CNFS平台开启合作共赢新篇章！     恭喜XX成为XX城市合伙人，携手CNFS平台开启合作共赢新篇章！</marquee
+        >
+      </div>
+    </div>
     <!--合作理念-->
     <div class="mind-box">
       <h3>合作理念</h3>
@@ -59,7 +65,7 @@
       </div>
 
       <!--合作条件-->
-      <div class="mind-box" style="padding-bottom:150px">
+      <div class="mind-box" style="padding-bottom: 150px">
         <h3>合作条件</h3>
         <h4>
           平台会不断优化城市合伙人机制，让更多具有相同价值观的优质企业成为合作伙伴共同发展
@@ -90,7 +96,6 @@
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
           <button @click="go('/regionalAgent')">立即查看</button>
-      
         </div>
         <div class="setcon-list nobg">
           <h4>北京</h4>
@@ -104,25 +109,6 @@
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
           <button @click="go('/regionalAgent')">立即查看</button>
-          
-        </div>
-        <div class="setcon-list">
-          <h4>北京</h4>
-          <p>100人正在申请<br />…</p>
-          <button @click="go('/regionalAgent')">立即查看</button>
-         
-        </div>
-        <div class="setcon-list nobg">
-          <h4>北京</h4>
-          <p>100人正在申请<br />…</p>
-          <button @click="go('/regionalAgent')">立即查看</button>
-          <div class="hot-icon">  <img src="@/assets/partner/icon_new.png" /></div>
-        </div>
-        <div class="setcon-list">
-          <h4>北京</h4>
-          <p>100人正在申请<br />…</p>
-          <button @click="go('/regionalAgent')">立即查看</button>
-         
         </div>
         <div class="setcon-list">
           <h4>北京</h4>
@@ -133,14 +119,34 @@
           <h4>北京</h4>
           <p>100人正在申请<br />…</p>
           <button @click="go('/regionalAgent')">立即查看</button>
-          <div class="hot-icon"><img src="@/assets/partner/icon_hot.png" /></div>
+          <div class="hot-icon">
+            <img src="@/assets/partner/icon_new.png" />
+          </div>
+        </div>
+        <div class="setcon-list">
+          <h4>北京</h4>
+          <p>100人正在申请<br />…</p>
+          <button @click="go('/regionalAgent')">立即查看</button>
+        </div>
+        <div class="setcon-list">
+          <h4>北京</h4>
+          <p>100人正在申请<br />…</p>
+          <button @click="go('/regionalAgent')">立即查看</button>
+        </div>
+        <div class="setcon-list nobg">
+          <h4>北京</h4>
+          <p>100人正在申请<br />…</p>
+          <button @click="go('/regionalAgent')">立即查看</button>
+          <div class="hot-icon">
+            <img src="@/assets/partner/icon_hot.png" />
+          </div>
         </div>
       </div>
     </div>
 
     <!--平台支持-->
     <div class="platform-box">
-      <h3>平台支持</h3>
+      <h3>平台支持11</h3>
       <div class="platformcon">
         <div class="platformcon-list">
           <img src="@/assets/partner/img01.png" />
@@ -193,7 +199,7 @@
 export default {
   data() {
     return {
-      activeIndex: "1"
+      activeIndex: "1",
     };
   },
   methods: {
@@ -205,9 +211,9 @@ export default {
       console.log("notify");
     },
     go(path) {
-      this.$router.push(path)
-    }
-  }
+      this.$router.push(path);
+    },
+  },
 };
 </script>
 
@@ -240,7 +246,7 @@ export default {
     justify-content: center;
     .top-main {
       position: absolute;
-      top: 200px;
+      top: 270px;
       left: 0;
       right: 0;
       display: flex;
@@ -248,11 +254,13 @@ export default {
       align-items: center;
       color: #fff;
       h2 {
-        font-size: 40px;
+        font-size: 64px;
         margin-bottom: 50px;
+        font-weight: lighter;
       }
       h4 {
-        font-size: 20px;
+        font-size: 32px;
+        font-weight: lighter;
       }
       .note {
         position: absolute;
@@ -276,6 +284,23 @@ export default {
     height: 105px;
     width: 100%;
     background: top center no-repeat url("~@/assets/partner/note-bg.png");
+    display: flex;
+    justify-content: center;
+    .marquee-box {
+      padding-left: 70px;
+      box-sizing: border-box;
+      width: 1200px;
+      background-image: url("~@/assets/partner/tongzhi-3.png");
+      background-size: 56px 44px;
+      background-repeat: no-repeat;
+      background-position: 0 center;
+      .note-txt {
+        color: #fff;
+        font-size: 32px;
+        line-height: 105px;
+        width: 100%;
+      }
+    }
   }
 
   .store-type {
@@ -442,7 +467,7 @@ export default {
   .set-box {
     background: #f5f5f6;
     width: 100%;
-    padding-top:80px;
+    padding-top: 80px;
     h3 {
       @include h3;
       display: inline;
@@ -503,9 +528,8 @@ export default {
         right: 0;
         top: 0;
       }
-      
     }
-     .nobg{
+    .nobg {
       background: #fff;
     }
   }
@@ -529,8 +553,11 @@ export default {
         height: 264px;
         align-items: center;
         width: 570px;
-
         margin: 13px 10px;
+        transition: all 0.3s ease;
+        &:hover {
+          transform: translate3d(0, -3px, 0);
+        }
         img {
           height: 260px;
           width: 570px;

@@ -16,6 +16,24 @@
           </j-button>
         </div>
       </div>
+      <vue-particles
+        color="#fff"
+        :particleOpacity="0.7"
+        :particlesNumber="60"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#fff"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="2"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      >
+      </vue-particles>
     </div>
     <!--广告位-->
     <div class="ad-box">
@@ -153,7 +171,7 @@ export default {
     };
   },
   created() {
-    this.reqUserLogin();
+    // this.reqUserLogin();
   },
   computed: {
     ...mapState({
@@ -207,6 +225,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/styles/variables.scss";
+
+#particles-js {
+  width: 100%;
+}
 .show-processcon .topIn {
   animation: topIn 1s ease;
   &:nth-child(2) {
@@ -289,7 +311,7 @@ export default {
     justify-content: center;
     .top-main {
       position: absolute;
-      top: 200px;
+      top: 180px;
       left: 0;
       right: 0;
       display: flex;
@@ -301,21 +323,24 @@ export default {
         visibility: visible;
       }
       h2 {
-        font-size: 40px;
-        margin-bottom: 50px;
+        font-size: 64px;
+        margin-bottom: 30px;
+        font-weight: lighter;
       }
       h4 {
-        font-size: 20px;
+        font-size: 32px;
+        font-weight: lighter;
       }
       .btn {
-        width: 360px;
+        width: 560px;
         height: 60px;
-        margin-top: 50px;
+        margin-top: 60px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         .iconfenzu151 {
           padding-right: 10px;
+          font-size: 24px;
           display: block;
         }
       }

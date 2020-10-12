@@ -16,7 +16,7 @@ const routes = [
     component: Layout,
     redirect: '/home',
     children: [{
-      path: 'home',
+      path: '/home',
       name: 'Home',
       component: () => import('@/views/home'),
       meta: { title: '首页' }
@@ -47,6 +47,17 @@ const routes = [
       path: '/login',
       name: 'Login',
       component: () => import('@/views/login')
+    }]
+  },
+  {
+    path: '/admin',
+    component: () => import('@/layout/admin.vue'),
+    redirect: '/information',
+    children: [{
+      path: '/information',
+      name: 'Info',
+      component: () => import('@/admin/information/info.vue'),
+      meta: { title: '首页' }
     }]
   },
   {

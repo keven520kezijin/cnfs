@@ -6,31 +6,25 @@
       </div>
       <div class="txt-list">
         <h2>关于我们</h2>
-        <a href="#">我们的团队</a>
-        <a href="#">研发团队</a>
-        <a href="#">公司地址</a>
-        <a href="#">人员架构</a>
+        <a href="#">联系我们</a>
       </div>
       <div class="txt-list">
-        <h2>联系我们</h2>
-        <a href="#">金融服务</a>
-        <a href="#">医疗服务</a>
-        <a href="#">车联服务</a>
-        <a href="#">电信服务</a>
-        <a href="#">金融服务</a>
-        <a href="#">医疗服务</a>
+        <h2>存储</h2>
+        <a href="#">多种存储类型</a>
+        <a href="#">CNFS产品优势</a>
+        <a href="#">产品服务</a>
+        <a href="#">行业实战场景</a>
       </div>
       <div class="txt-list">
-        <h2>加入我们</h2>
-        <a href="#">研发组</a>
-        <a href="#">前端组</a>
-        <a href="#">市场组</a>
+        <h2>相关资源</h2>
+        <a href="#">CNFS白皮书</a>
       </div>
       <div class="footer-box">
         <h2>关注</h2>
         <img src="../assets/0.png" />
       </div>
     </div>
+    <div class="right">沪ICP备2020029560号</div>
   </div>
 </template>
 
@@ -59,6 +53,9 @@ export default {
     justify-content: center;
     color: #fff;
     padding-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .main {
       width: 80%;
       display: flex;
@@ -98,6 +95,14 @@ export default {
           width: 100%;
         }
       }
+    }
+    .right {      
+      width: 80%;
+      border-top: 1px #666 solid;
+      padding: 20px;
+      font-size: 12px;
+      color: #5D5D5E;
+      margin-top: 30px;
     }
   }
 </style>

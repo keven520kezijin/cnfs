@@ -21,21 +21,21 @@ export default {
 <style scoped lang="scss">
 .button {
   box-sizing: border-box;
-  width: 150px;
-  height: 40px;
+  width: 260px;
+  height: 64px;
   border-radius: 6px;
   border: 1px #ccc solid;
-  font-size: 14px;
+  font-size: 24px;
   color: #fff;
   text-align: center;
-  line-height: 40px;
+  line-height: 64px;
   display: flex;
   justify-content: center;
   text-align: center;
   transition: all 0.2s ease-in;
 }
 .button-icon {
-  font-size: 16px !important;
+  font-size: 16px;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
