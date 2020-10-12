@@ -182,17 +182,14 @@
     </div>
 
     <!-- <el-button>默认按钮</el-button> -->
-    <j-footer></j-footer>
+    <!-- <j-footer></j-footer> -->
   </div>
 </template>
 
 <script>
 // require styles
 
-import jFooter from "@/components/footer";
-import jButton from "@/components/button";
 export default {
-  components: { jFooter, jButton },
   data() {
     return {
       activeIndex: "1",
@@ -337,6 +334,7 @@ export default {
         width: 300px;
         font-size: 18px;
         color: #767676;
+        transition: all .3s;
         &:hover {
           box-shadow: 0 0 9px 3px #999;
         }
@@ -434,6 +432,7 @@ export default {
 
       .profuncon-list:hover {
         box-shadow: 0 0 9px 3px #999;
+        transform: translateY(-5px);
       }
       .profuncon-list {
         width: 500px;
@@ -443,6 +442,7 @@ export default {
         padding: 35px 30px;
         display: flex;
         align-items: flex-start;
+        transition: transform 0.3s;
         .profunc-pic {
           float: left;
           width: 70px;

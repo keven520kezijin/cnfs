@@ -55,22 +55,25 @@
     <!--公司发展历程-->
     <div class="process-box">
       <h3>公司发展历程</h3>
-      <div class="processcon">
-        <div class="processcon-list">
-          <div class="processcon-list-pic active">2019.6月</div>
-          <h4>1纪元链科技公司成立 CNFS平台搭建</h4>
+      <div
+        class="processcon"
+        :class="isShowProcesscon ? 'show-processcon' : ''"
+      >
+        <div class="processcon-list topIn">
+          <div class="processcon-list-pic">2019.6月</div>
+          <h4>纪元链科技公司成立 CNFS平台搭建</h4>
         </div>
-        <div class="processcon-list">
+        <div class="processcon-list topIn">
           <div class="processcon-list-pic">2019.8月</div>
-          <h4>2纪元链科技公司成立 CNFS平台搭建</h4>
+          <h4>纪元链科技公司成立 CNFS平台搭建</h4>
         </div>
-        <div class="processcon-list">
+        <div class="processcon-list topIn">
           <div class="processcon-list-pic">2020.3月</div>
-          <h4>3纪元链科技公司成立 CNFS平台搭建</h4>
+          <h4>纪元链科技公司成立 CNFS平台搭建</h4>
         </div>
-        <div class="processcon-list">
+        <div class="processcon-list topIn">
           <div class="processcon-list-pic">2021.6月</div>
-          <h4>4纪元链科技公司成立 CNFS平台搭建</h4>
+          <h4>纪元链科技公司成立 CNFS平台搭建</h4>
         </div>
       </div>
     </div>
@@ -79,17 +82,29 @@
     <div class="news-box">
       <h3>重要新闻</h3>
       <div class="newscon">
-        <div class="newscon-list" data-aos="fade-down" data-aos-once="true">
+        <div
+          class="newscon-list"
+          data-aos="fade-down-right"
+          data-aos-once="true"
+        >
           <img src="../../assets/home/news-1.png" />
           <h4>
             区块链，云栖大会邀请全球科技爱好者和商业创新者，共同打开未来科技之门
           </h4>
         </div>
-        <div class="newscon-list" data-aos="fade-down" data-aos-once="true">
+        <div
+          class="newscon-list"
+          data-aos="fade-down-right"
+          data-aos-once="true"
+        >
           <img src="../../assets/home/news-2.png" />
           <h4>今年重磅发布，云计算，人工智能，量子计算，芯片…</h4>
         </div>
-        <div class="newscon-list" data-aos="fade-down" data-aos-once="true">
+        <div
+          class="newscon-list"
+          data-aos="fade-down-right"
+          data-aos-once="true"
+        >
           <img src="../../assets/home/news-3.png" />
           <h4>
             今年重磅发布，云计算，人工智能，量子计算，芯片… 突破对未来科技的橡！
@@ -129,12 +144,17 @@
 import jButton from "../../components/button";
 import searchBox from "./components/searchBox";
 import { mapState } from "vuex";
+import { userLogin } from "@/api";
 export default {
   components: { jButton, searchBox },
   data() {
-    return {};
+    return {
+      isShowProcesscon: false,
+    };
   },
-  created() {},
+  created() {
+    this.reqUserLogin();
+  },
   computed: {
     ...mapState({
       device: (state) => state.user.device,
@@ -150,6 +170,19 @@ export default {
     window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
+    reqUserLogin() {
+      const data = {
+        type: "Password",
+        code: "string",
+        mobile: "string",
+        platform: "PltInvalid",
+        ip: "string",
+        password: "string",
+      };
+      userLogin(data).then((res) => {
+        console.log("res: ", res);
+      });
+    },
     handleNavSelect(e) {
       console.log("e: ", e);
       this.activeIndex = e;
@@ -163,6 +196,10 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
       console.log(scrollTop);
+
+      if (scrollTop > 1200 && !this.isShowProcesscon) {
+        this.isShowProcesscon = true;
+      }
     },
   },
 };
@@ -170,8 +207,31 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/styles/variables.scss";
+.show-processcon .topIn {
+  animation: topIn 1s ease;
+  &:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+  &:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+  &:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+}
 
-.show .leftIn {
+@keyframes topIn {
+  from {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.show .leftIn,
+.show-processcon .leftIn {
   animation-name: leftIn;
   animation-duration: 1s;
 }
@@ -194,6 +254,11 @@ export default {
 }
 
 .delay400 {
+  animation-delay: 400ms;
+  animation-fill-mode: backwards !important;
+}
+
+.delay600 {
   animation-delay: 400ms;
   animation-fill-mode: backwards !important;
 }
@@ -366,6 +431,10 @@ export default {
       display: flex;
       justify-content: space-between;
       position: relative;
+      visibility: hidden;
+      &.show-processcon {
+        visibility: visible;
+      }
       &::after {
         content: "";
         width: 800px;
@@ -391,7 +460,8 @@ export default {
           font-weight: 800;
           text-align: center;
           line-height: 84px;
-          &.active {
+          transition: all 0.3s;
+          &:hover {
             background-image: url("../../assets/home/bgOn-1.png");
             color: #fff;
           }
@@ -427,6 +497,11 @@ export default {
       justify-content: center;
       .newscon-list {
         width: 384px;
+        box-shadow: 10px 10px 20px 0px rgba(222, 223, 226, 0.5);
+        &:hover img {
+          border: 3px #0d8bff solid;
+          box-sizing: border-box;
+        }
         &:not(:last-child) {
           margin-right: 22px;
         }

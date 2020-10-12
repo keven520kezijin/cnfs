@@ -3,6 +3,25 @@ import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
 
+switch (process.env.NODE_ENV) {
+  case 'production_uat':
+    window.__baseUrl = ''
+    // window.__baseUrl = '//app-uat.baoinfo.cn'
+    break
+  case 'production':
+    window.__baseUrl = '//production'
+    // window.__baseUrl = '//pkufi-perftest.zhongan.io'
+    break
+  case 'development':
+    // window.__baseUrl = ''
+    window.__baseUrl = '//192.168.3.25:60000'
+    break
+  default:
+    window.__baseUrl = ''
+}
+
+axios.defaults.baseURL = window.__baseUrl
+
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url

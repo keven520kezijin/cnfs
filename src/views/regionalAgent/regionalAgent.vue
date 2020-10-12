@@ -9,7 +9,7 @@
       <ul>
         <li>上海市</li>
         <li>></li>
-        <li>区市级代理</li>
+        <li>城市合伙人</li>
       </ul>
     </div>
 
@@ -221,7 +221,7 @@ export default {
     height: 78px;
     display: flex;
     justify-content: center;
-     background: bottom  repeat-y url("~@/assets/agents/lan.png");
+    background-color: #292c2f;
 
     .top-box {
       width: $pageWidth;

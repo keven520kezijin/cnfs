@@ -445,8 +445,7 @@ export default {
     padding-top:80px;
     h3 {
       @include h3;
-      display: inline-block;
-      padding: 60px 0 50px 0;
+      display: inline;
     }
     .setcon {
       width: 1200px;

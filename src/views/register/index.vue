@@ -27,6 +27,5 @@ export default {
 <style scoped lang="scss">
 .page-register {
   height: 100%;
-  position: relative;
 }
 </style>

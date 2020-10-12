@@ -52,7 +52,7 @@ export default {
   justify-content: center;
   align-items: center;
   .searchcon {
-    width: 90%;
+    width: 1200px;
     margin: 0 auto;
     background: #fff;
     height: 54px;
@@ -79,7 +79,7 @@ export default {
 
   .searchcon-list {
     margin-top: 20px;
-    width: 90%;
+    width: 1200px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;

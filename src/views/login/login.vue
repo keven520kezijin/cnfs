@@ -11,7 +11,7 @@
           <p>
             采用分布式存储方式分布式存储，数据信息更安全可靠，信息更加快速，便捷，资源共享
           </p>
-          <h4><img src="@/assets/login/login-bg.png"  /></h4>
+          <h4><img src="@/assets/login/login-bg.png" /></h4>
         </div>
         <div class="login-con">
           <h3>账号密码登录</h3>
@@ -23,9 +23,9 @@
           <div class="login-other">
             <p>其它登录方式</p>
             <ol>
-              <li><img src="@/assets/login/icon_weibo.png"  />微博</li>
-              <li><img src="@/assets/login/icon_qq.png"  />QQ</li>
-              <li><img src="@/assets/login/icon_weixin.png"  />微信公众账号</li>
+              <li><img src="@/assets/login/icon_weibo.png" />微博</li>
+              <li><img src="@/assets/login/icon_qq.png" />QQ</li>
+              <li><img src="@/assets/login/icon_weixin.png" />微信公众账号</li>
             </ol>
           </div>
           <div class="login-reg">
@@ -41,9 +41,9 @@
 
     <!--内页尾部-->
     <div class="ny-footer">
-    Copyright@2019-2020 Epochain.org  CNFS存储平台版权归开发者所有，并保留所有权利
+      Copyright@2019-2020 Epochain.org
+      CNFS存储平台版权归开发者所有，并保留所有权利
     </div>
- 
   </div>
 </template>
 
@@ -51,7 +51,7 @@
 export default {
   data() {
     return {
-      activeIndex: "1"
+      activeIndex: "1",
     };
   },
   methods: {
@@ -61,8 +61,8 @@ export default {
     },
     notify() {
       console.log("notify");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -106,9 +106,9 @@ export default {
     .nycontent {
       width: 1200px;
       margin: 0 auto;
-      padding: 150px 0;
+      padding: 0;
       overflow: hidden;
-      zoom:1;
+      zoom: 1;
       .login-txt {
         width: 550px;
         text-align: left;
@@ -127,7 +127,7 @@ export default {
           color: #8f8f8f;
           line-height: 38px;
         }
-        h4{
+        h4 {
           padding-top: 20px;
         }
       }
@@ -135,7 +135,7 @@ export default {
         height: 712px;
         width: 550px;
         float: right;
-         background: url("~@/assets/login/line.png") top left no-repeat;
+        background: url("~@/assets/login/line.png") top left no-repeat;
 
         padding-left: 50px;
         text-align: left;
@@ -218,25 +218,26 @@ export default {
               font-size: 24px;
               color: #333333;
               line-height: 31px;
-              
             }
-            .line{
-                color: #D8D8D8;
-              }
+            .line {
+              color: #d8d8d8;
+            }
           }
         }
       }
     }
   }
-  .ny-footer{
+  .ny-footer {
     height: 84px;
     width: 100%;
-background: #F7F8FA;
-border: 1px solid #EFEFEF;
-text-align: center;
-line-height: 84px;
-font-size: 16px;
-color: #999999;
+    background: #f7f8fa;
+    border: 1px solid #efefef;
+    text-align: center;
+    line-height: 84px;
+    font-size: 16px;
+    color: #999999;
+    position: absolute;
+    bottom: 0;
   }
 }
 </style>

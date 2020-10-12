@@ -7,17 +7,33 @@
     <div class="nywrap">
       <h3>注册CNFS存储与计算平台账号</h3>
       <div class="nycontent" style="padding-bottom: 40px">
-        <!--找回密码-->
         <div class="find-box">
-          <ul>
-            <li><input tpye="text" placeholder="请输入手机号码" /></li>
-            <li><input tpye="text" placeholder="请输入验证码" /></li>
-            <li><input tpye="text" placeholder="请设置登录密码" /></li>
-            <!-- <li><input tpye="text" placeholder="再次确认新的登录密码" /></li>-->
-            <li><button>注册并登陆</button></li>
-          </ul>
+          <el-form ref="rulesForm" :rules="rules" :model="rulesForm">
+            <el-form-item prop="mobile">
+              <el-input
+                v-model="rulesForm.mobile"
+                placeholder="请输入手机号码"
+              ></el-input>
+            </el-form-item>
+            <el-form-item class="code" prop="code">
+              <el-input
+                v-model="rulesForm.code"
+                placeholder="请输入验证码"
+              ></el-input>
+              <span class="code-txt">获取验证码</span>
+            </el-form-item>
+            <el-form-item prop="password">
+              <el-input
+                v-model="rulesForm.password"
+                placeholder="请设置登录密码"
+              ></el-input>
+            </el-form-item>
+            <el-button type="primary" round class="register-btn"
+              >注册并登陆</el-button
+            >
+          </el-form>
         </div>
-        <!--服务条款-->
+
         <div class="clause-box">
           登陆即代表已阅读并同意<span>《软件服务协议》</span>
         </div>
@@ -36,7 +52,43 @@
 export default {
   data() {
     return {
+      rulesForm: {
+        device_id: "",
+        ip: "",
+        nick_name: "",
+        mobile: "",
+        password: "",
+        code: "",
+      },
       activeIndex: "1",
+      rules: {
+        nick_name: [
+          { required: true, message: "请输入活动名称", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" },
+        ],
+        mobile: [{ validator: this.checkPhone, trigger: "blur" }],
+        password: [{ validator: this.checkPassword, trigger: "blur" }],
+        date2: [
+          {
+            type: "date",
+            required: true,
+            message: "请选择时间",
+            trigger: "change",
+          },
+        ],
+        type: [
+          {
+            type: "array",
+            required: true,
+            message: "请至少选择一个活动性质",
+            trigger: "change",
+          },
+        ],
+        resource: [
+          { required: true, message: "请选择活动资源", trigger: "change" },
+        ],
+        desc: [{ required: true, message: "请填写活动形式", trigger: "blur" }],
+      },
     };
   },
   methods: {
@@ -46,6 +98,33 @@ export default {
     },
     notify() {
       console.log("notify");
+    },
+    checkPhone(rule, value, callback) {
+      if (!value) {
+        return callback(new Error("手机号不能为空"));
+      } else {
+        const reg = /^1[3|4|5|7|8|9][0-9]\d{8}$/;
+        console.log(reg.test(value));
+        if (reg.test(value)) {
+          callback();
+        } else {
+          return callback(new Error("请输入正确的手机号"));
+        }
+      }
+    },
+    checkPassword(rule, value, callback) {
+      // (?!.*\s)(?!^[\u4e00-\u9fa5]+$)(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{8,20}$
+      if (!value) {
+        return callback(new Error("密码不能为空"));
+      } else {
+        const reg = /(?!.*\s)(?!^[\u4e00-\u9fa5]+$)(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,20}$/;
+        console.log(reg.test(value));
+        if (reg.test(value)) {
+          callback();
+        } else {
+          return callback(new Error("请输入正确的密码"));
+        }
+      }
     },
   },
 };
@@ -65,6 +144,35 @@ export default {
   background-size: 10px 20px;
   background-position: 0 center;
   background-repeat: no-repeat;
+}
+.el-form-item {
+  margin-bottom: 30px;
+  .code {
+    position: relative;
+  }
+  .el-input {
+    ::v-deep .el-input__inner {
+      height: 54px;
+      font-size: 22px;
+    }
+  }
+}
+
+.code-txt {
+  position: absolute;
+  font-size: 22px;
+  color: #0d8bff;
+  top: 0;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.register-btn {
+  width: 100%;
+  height: 54px;
+  border-radius: 0;
+  font-size: 24px;
 }
 
 .home {
@@ -147,6 +255,8 @@ export default {
     line-height: 84px;
     font-size: 16px;
     color: #999999;
+    position: absolute;
+    bottom: 0;
   }
 }
 </style>
